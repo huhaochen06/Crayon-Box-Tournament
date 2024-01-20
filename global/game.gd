@@ -21,3 +21,4 @@ var times = {
 	"p1": 0,
 	"p2": 0
 }
+var current_world = ""

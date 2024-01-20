@@ -12,8 +12,13 @@ func create_instance(add):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Add a random level to the scene as child
-	var level = allLevels[randi() % allLevels.size()]
-	var world = create_instance(level)
+	if Game.split == 2:
+		Game.current_world = allLevels[randi() % allLevels.size()]
+	elif Game.split == 0:
+		Game.current_world = allLevels[randi() % allLevels.size()]
+		Game.split = 1
+
+	var world = create_instance(Game.current_world)
 	self.add_child(world)
 
 	var spawn = world.get_node("Spawn")
@@ -35,8 +40,10 @@ func on_goal_entered(body):
 	Game.times[Game.current_player] = stopwatch.time
 	print(Game.times)
 	if Game.current_player == 'p1':
+		Game.split = 1
 		Game.current_player = 'p2'
 	else:
+		Game.split = 2
 		Game.current_player = 'p1'
 		if Game.times['p1'] < Game.times['p2']:
 			Game.score['p1'] += 1
