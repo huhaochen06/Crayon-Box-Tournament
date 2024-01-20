@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://otb2e0vovr7n"]
+[gd_scene load_steps=8 format=3 uid="uid://otb2e0vovr7n"]
 
 [ext_resource type="PackedScene" uid="uid://dmwquuvtixenl" path="res://world/world_1/sq_box.tscn" id="1_hgubd"]
+[ext_resource type="PackedScene" uid="uid://r1ufaykleqt1" path="res://world/common/spawn.tscn" id="2_x3mur"]
+[ext_resource type="PackedScene" uid="uid://cf4to3rh5ysoh" path="res://world/common/goal.tscn" id="3_xkw1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mr8x"]
 size = Vector2(742.214, 39)
@@ -38,8 +40,11 @@ shape = SubResource("RectangleShape2D_icy7b")
 position = Vector2(-498, 458)
 shape = SubResource("RectangleShape2D_6sg0m")
 
-[node name="Spawn" type="Marker2D" parent="."]
-position = Vector2(-435, 360)
-
 [node name="SquareBox" parent="." instance=ExtResource("1_hgubd")]
 position = Vector2(55, 112)
+
+[node name="Spawn" parent="." instance=ExtResource("2_x3mur")]
+position = Vector2(-459, 354)
+
+[node name="Goal" parent="." instance=ExtResource("3_xkw1s")]
+position = Vector2(561, 442)

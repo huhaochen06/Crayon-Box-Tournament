@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
+var NORMAL_SPEED = Game.movement_speed
 const JUMP_VELOCITY = -400.0
 const WALL_JUMP_VELOCITY = -800 # New constant for wall jump velocity
 const WALL_SLIDE_SPEED = 6000 # New constant for wall slide speed
-const DASH_SPEED = 1000.0
-const DASH_LENGTH = 0.1
-const NORMAL_SPEED = 400.0
+
+var DASH_SPEED = Game.dash_speed
+var DASH_DURATION = Game.dash_duration
 const DASH_COOLDOWN = 0.5
+
+var PHASE_DURATION = Game.phase_duration
+var PHASE_COOLDOWN = Game.phase_cooldown
+var box_size = Game.size
 
 @onready var dash_timer = $Dash/DashTimer
 @onready var dash_cooldown_timer = $Dash/DashCooldownTimer
@@ -19,6 +24,10 @@ var dash_direction: Vector2
 var can_dash = true
 var is_touching_wall = false # New variable to track if the character is touching a wall
 var can_phase = true
+
+func _ready():
+    # Set size to box_size
+    self.scale = box_size
 
 func _physics_process(delta):
     is_touching_wall = is_on_wall() # Check if the character is touching a wall
@@ -34,7 +43,7 @@ func _physics_process(delta):
             if is_touching_wall: # If the character is touching a wall
                 if Input.is_action_just_pressed("ui_accept"): # And the jump button is pressed
                     # get the normal of the wall and multiply it by the wall jump velocity
-                    dash_timer.start(DASH_LENGTH)
+                    dash_timer.start(DASH_DURATION)
                     var player_direction
                     if $Sprite.flip_h:
                         player_direction = 1
@@ -70,7 +79,7 @@ func _physics_process(delta):
         # Handle dash.
         if Input.is_action_just_pressed("dash"):
             if can_dash:
-                dash_timer.start(DASH_LENGTH)
+                dash_timer.start(DASH_DURATION)
                 dash_cooldown_timer.start(DASH_COOLDOWN)
                 $Sprite.texture = load("res://player/box/assets/box-bw.png")
                 can_dash = false
@@ -79,8 +88,8 @@ func _physics_process(delta):
         # Handle phase.
         if Input.is_action_just_pressed("ability"):
             if can_phase:
-                phase_timer.start(0.5)
-                phase_cooldown_timer.start(5.0)
+                phase_timer.start(PHASE_DURATION)
+                phase_cooldown_timer.start(PHASE_COOLDOWN)
                 # Change opacity of the character
                 $Sprite.modulate.a = 0.5
                 # change collision layer
