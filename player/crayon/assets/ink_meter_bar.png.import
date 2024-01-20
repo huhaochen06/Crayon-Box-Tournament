@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg020bpw6hbws"
-path="res://.godot/imported/box-head.png-78dd9d5bce7567f0b4ea853ebe685a6d.ctex"
+uid="uid://b21dpwbw6gfr0"
+path="res://.godot/imported/ink_meter_bar.png-ba8cb3c64c32c69857caf5820cf1778a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/box/box-head.png"
-dest_files=["res://.godot/imported/box-head.png-78dd9d5bce7567f0b4ea853ebe685a6d.ctex"]
+source_file="res://player/crayon/assets/ink_meter_bar.png"
+dest_files=["res://.godot/imported/ink_meter_bar.png-ba8cb3c64c32c69857caf5820cf1778a.ctex"]
 
 [params]
 
