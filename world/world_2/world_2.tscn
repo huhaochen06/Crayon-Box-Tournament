@@ -188,20 +188,24 @@ metadata/_edit_lock_ = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
 
 [node name="1024x768-light-sky-blue-solid-color-background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(576, 480)
+position = Vector2(-32, -8)
 scale = Vector2(1.17871, 1)
 texture = ExtResource("1_dnu51")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
 
 [node name="Clouds8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_filter = 1
 position = Vector2(240, 360)
 scale = Vector2(1.125, 0.910194)
 texture = ExtResource("9_kfx34")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Clouds7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
@@ -209,6 +213,7 @@ texture_filter = 1
 position = Vector2(1067, 447)
 scale = Vector2(0.6, 0.556738)
 texture = ExtResource("5_mmae8")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Clouds3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
@@ -216,12 +221,15 @@ texture_filter = 1
 position = Vector2(624, 489)
 scale = Vector2(0.55, 0.442857)
 texture = ExtResource("3_gxccb")
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="Clouds2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_filter = 1
 position = Vector2(704, 296)
 scale = Vector2(0.8625, 0.935714)
 texture = ExtResource("3_gxccb")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Clouds6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
@@ -229,6 +237,7 @@ texture_filter = 1
 position = Vector2(480, 400)
 scale = Vector2(0.52439, 0.477848)
 texture = ExtResource("12_wyk6s")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Clouds5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
@@ -236,6 +245,7 @@ texture_filter = 1
 position = Vector2(432, 424)
 scale = Vector2(0.603896, 0.421986)
 texture = ExtResource("13_4ru01")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Clouds4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
@@ -243,9 +253,11 @@ texture_filter = 1
 position = Vector2(240, 512)
 scale = Vector2(0.4, 0.329787)
 texture = ExtResource("5_mmae8")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Clouds1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+visible = false
 texture_filter = 1
 position = Vector2(130.75, 478.5)
 scale = Vector2(0.232813, 0.25)
