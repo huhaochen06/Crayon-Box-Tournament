@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://g4tvy37k2a3s"]
+
+[ext_resource type="Texture2D" uid="uid://c6vgnn6o6l32l" path="res://world/world_1/art/Amazon Boxes.png" id="1_a2feg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omoob"]
+atlas = ExtResource("1_a2feg")
+region = Rect2(172, 172, 135, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1qjw"]
+size = Vector2(36, 35)
+
+[node name="SquareBoxFollow" type="PathFollow2D"]
+scale = Vector2(2, 2)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("..")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(1.44321, 0.500031)
+scale = Vector2(0.295455, 0.295455)
+texture = SubResource("AtlasTexture_omoob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(1.44321, 1.00003)
+shape = SubResource("RectangleShape2D_a1qjw")
