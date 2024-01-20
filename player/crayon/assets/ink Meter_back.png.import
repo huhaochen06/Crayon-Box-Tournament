@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3nrfakjxbw6"
-path="res://.godot/imported/ink_meter_over.png-bf8f3705be244024d207222e9285d20f.ctex"
+uid="uid://ciwbkhu103s0j"
+path="res://.godot/imported/ink Meter_back.png-06c8e93d5d92994e65054dec569b60cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/crayon/assets/ink_meter_over.png"
-dest_files=["res://.godot/imported/ink_meter_over.png-bf8f3705be244024d207222e9285d20f.ctex"]
+source_file="res://player/crayon/assets/ink Meter_back.png"
+dest_files=["res://.godot/imported/ink Meter_back.png-06c8e93d5d92994e65054dec569b60cb.ctex"]
 
 [params]
 

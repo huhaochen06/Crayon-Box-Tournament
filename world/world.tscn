@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://defdxwfktl665"]
+[gd_scene load_steps=5 format=3 uid="uid://defdxwfktl665"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_ae6yj"]
 [ext_resource type="PackedScene" uid="uid://bwu8ink5eygl7" path="res://player/box/box.tscn" id="1_kqfj3"]
 [ext_resource type="PackedScene" uid="uid://df8j7n3grw5tn" path="res://player/crayon/crayon.tscn" id="2_i8rew"]
 [ext_resource type="Script" path="res://world/main-camera.gd" id="4_85n0t"]
-[ext_resource type="PackedScene" uid="uid://b18lylnrbnawp" path="res://world/gui.tscn" id="5_geh21"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ae6yj")
@@ -14,6 +13,5 @@ script = ExtResource("1_ae6yj")
 [node name="Crayon" parent="." instance=ExtResource("2_i8rew")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 318)
 script = ExtResource("4_85n0t")
-
-[node name="Gui" parent="." instance=ExtResource("5_geh21")]

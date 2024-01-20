@@ -50,7 +50,7 @@ func finalize_line():
 
 	var body = RigidBody2D.new()
 	body.gravity_scale = 0
-	body.collision_layer = 1
+	body.collision_layer = 2
 	body.collision_mask = 0
 	add_child(body)
 

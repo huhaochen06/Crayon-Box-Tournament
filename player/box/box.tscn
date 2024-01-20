@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwu8ink5eygl7"]
+[gd_scene load_steps=7 format=3 uid="uid://bwu8ink5eygl7"]
 
 [ext_resource type="Script" path="res://player/box/box.gd" id="1_uhfqx"]
 [ext_resource type="Texture2D" uid="uid://dg020bpw6hbws" path="res://player/box/assets/box-normal.png" id="2_6bvi2"]
+[ext_resource type="Script" path="res://player/box/phase.gd" id="3_vlqk0"]
+[ext_resource type="Texture2D" uid="uid://cio3omdb3h5vw" path="res://player/box/assets/phase-under.png" id="4_fopjb"]
+[ext_resource type="Texture2D" uid="uid://85bgimpu6xr3" path="res://player/box/assets/phase-progress.png" id="5_tv1gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ono7p"]
 size = Vector2(26, 20)
 
 [node name="Box" type="CharacterBody2D"]
 position = Vector2(50, 573)
+collision_mask = 3
 script = ExtResource("1_uhfqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,10 +23,33 @@ position = Vector2(13, 10)
 scale = Vector2(0.0882813, 0.0882813)
 texture = ExtResource("2_6bvi2")
 
-[node name="DashTimer" type="Timer" parent="."]
+[node name="Phase" type="Node2D" parent="."]
+script = ExtResource("3_vlqk0")
+
+[node name="PhaseProgress" type="TextureProgressBar" parent="Phase"]
+offset_left = -25.0
+offset_top = -30.0
+offset_right = 487.0
+offset_bottom = 482.0
+scale = Vector2(0.15, 0.15)
+fill_mode = 4
+texture_under = ExtResource("4_fopjb")
+texture_progress = ExtResource("5_tv1gt")
+
+[node name="PhaseCooldownTimer" type="Timer" parent="Phase"]
 one_shot = true
 
-[node name="DashCooldownTimer" type="Timer" parent="."]
+[node name="PhaseTimer" type="Timer" parent="Phase"]
 one_shot = true
 
-[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[node name="Dash" type="Node2D" parent="."]
+
+[node name="DashTimer" type="Timer" parent="Dash"]
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="Dash"]
+one_shot = true
+
+[connection signal="timeout" from="Phase/PhaseCooldownTimer" to="." method="_on_phase_cooldown_timer_timeout"]
+[connection signal="timeout" from="Phase/PhaseTimer" to="." method="_on_phase_timer_timeout"]
+[connection signal="timeout" from="Dash/DashTimer" to="." method="_on_dash_timer_timeout"]

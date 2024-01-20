@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxf5xnk4jwv3"
-path="res://.godot/imported/ink_meter_bar.png-ba8cb3c64c32c69857caf5820cf1778a.ctex"
+uid="uid://85bgimpu6xr3"
+path="res://.godot/imported/phase-progress.png-e58185b2206df6b991bd8751ede33f0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/crayon/assets/ink_meter_bar.png"
-dest_files=["res://.godot/imported/ink_meter_bar.png-ba8cb3c64c32c69857caf5820cf1778a.ctex"]
+source_file="res://player/box/assets/phase-progress.png"
+dest_files=["res://.godot/imported/phase-progress.png-e58185b2206df6b991bd8751ede33f0a.ctex"]
 
 [params]
 

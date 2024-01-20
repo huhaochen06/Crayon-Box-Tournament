@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://otb2e0vovr7n"]
 
-[ext_resource type="PackedScene" uid="uid://bgt0x5dhoarq3" path="res://world/world_1/sq_box.tscn" id="1_hgubd"]
+[ext_resource type="PackedScene" path="res://world/world_1/sq_box.tscn" id="1_hgubd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mr8x"]
 size = Vector2(742.214, 39)
@@ -40,3 +40,6 @@ shape = SubResource("RectangleShape2D_6sg0m")
 
 [node name="AnimatableBody2D" parent="." instance=ExtResource("1_hgubd")]
 position = Vector2(-330, 373)
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(-445, 342)

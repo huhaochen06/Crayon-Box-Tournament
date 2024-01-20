@@ -14,6 +14,10 @@ func _ready():
 	var world = create_instance(level)
 	self.add_child(world)
 
+	var spawn = world.get_node("Spawn")
+	print(spawn.global_position)
+	$Box.global_position = spawn.global_position
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
