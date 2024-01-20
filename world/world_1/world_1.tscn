@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://otb2e0vovr7n"]
 
-[ext_resource type="PackedScene" path="res://world/world_1/sq_box.tscn" id="1_hgubd"]
+[ext_resource type="PackedScene" uid="uid://bgt0x5dhoarq3" path="res://world/world_1/sq_box.tscn" id="1_hgubd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mr8x"]
 size = Vector2(742.214, 39)
@@ -38,28 +38,8 @@ shape = SubResource("RectangleShape2D_icy7b")
 position = Vector2(-498, 458)
 shape = SubResource("RectangleShape2D_6sg0m")
 
-[node name="square" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(-330, -91)
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(-435, 360)
 
-[node name="square2" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(214, 533)
-metadata/_edit_group_ = true
-
-[node name="square3" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(254, 5)
-
-[node name="square4" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(278, 349)
-
-[node name="square5" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(6, 421)
-
-[node name="square6" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(-2, 181)
-
-[node name="square7" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(-370, 397)
-
-[node name="square8" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(-250, 269)
-metadata/_edit_group_ = true
+[node name="SquareBox" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(55, 112)
