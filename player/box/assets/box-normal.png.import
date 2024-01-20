@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gbop62ficyvv"
-path="res://.godot/imported/ink_meter.png-a4d51087c2c103fce6eb5434f4ffb723.ctex"
+uid="uid://dg020bpw6hbws"
+path="res://.godot/imported/box-normal.png-f899dc0aa83ff0c9599f96f695d0b07a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/crayon/ink_meter.png"
-dest_files=["res://.godot/imported/ink_meter.png-a4d51087c2c103fce6eb5434f4ffb723.ctex"]
+source_file="res://player/box/assets/box-normal.png"
+dest_files=["res://.godot/imported/box-normal.png-f899dc0aa83ff0c9599f96f695d0b07a.ctex"]
 
 [params]
 
