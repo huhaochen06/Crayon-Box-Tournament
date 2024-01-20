@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf4to3rh5ysoh"]
+
+[ext_resource type="Texture2D" uid="uid://b78pre1pnniyd" path="res://world/common/assets/CB.png" id="1_n6xff"]
+
+[node name="Goal" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.103125, 0.103125)
+texture = ExtResource("1_n6xff")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(13, -14, 13, -2, -6, -2, -4, 14, -11, 14, -9, -14)
