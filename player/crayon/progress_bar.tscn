@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://v0e7ouq43ctc"]
+
+[sub_resource type="GDScript" id="GDScript_v61fe"]
+script/source = "extends ProgressBar
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="ProgressBar" type="ProgressBar"]
+offset_left = 797.0
+offset_top = 39.0
+offset_right = 1105.0
+offset_bottom = 66.0
+fill_mode = 1
+script = SubResource("GDScript_v61fe")
