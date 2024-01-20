@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://bwu8ink5eygl7"]
+[gd_scene load_steps=4 format=3 uid="uid://bwu8ink5eygl7"]
 
-[node name="Box" type="Node2D"]
+[ext_resource type="Script" path="res://player/box/box.gd" id="1_uhfqx"]
+[ext_resource type="Texture2D" uid="uid://dg020bpw6hbws" path="res://player/box/box-head.png" id="2_6bvi2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ono7p"]
+size = Vector2(26, 20)
+
+[node name="Box" type="CharacterBody2D"]
+script = ExtResource("1_uhfqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 10)
+shape = SubResource("RectangleShape2D_ono7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Box-head" type="Sprite2D" parent="."]
+position = Vector2(13, 10)
+scale = Vector2(0.0882813, 0.0882813)
+texture = ExtResource("2_6bvi2")
