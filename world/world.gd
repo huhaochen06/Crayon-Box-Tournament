@@ -1,6 +1,6 @@
 extends Node2D
 
-var allLevels = ["res://world/world_1/world_1.tscn"]
+var allLevels = ["res://world/world_2/world_2.tscn"]
 
 func create_instance(add):
 	var scene = load(add)
