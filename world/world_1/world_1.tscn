@@ -16,10 +16,10 @@ position = Vector2(522, 203)
 script = ExtResource("1_7kx4b")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -511.0
-offset_top = -119.0
-offset_right = 102.0
-offset_bottom = -1.0
+offset_left = -498.0
+offset_top = 437.0
+offset_right = 115.0
+offset_bottom = 555.0
 text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
