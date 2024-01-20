@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x4hfocx62tk5"
-path="res://.godot/imported/Amazon Boxes.png-c3edcd688e9cb1f59eceff9e81d3b193.ctex"
+uid="uid://cio3omdb3h5vw"
+path="res://.godot/imported/phase-under.png-547fa3792ebb6a01789bf32bbd51da00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/box/Amazon Boxes.png"
-dest_files=["res://.godot/imported/Amazon Boxes.png-c3edcd688e9cb1f59eceff9e81d3b193.ctex"]
+source_file="res://player/box/assets/phase-under.png"
+dest_files=["res://.godot/imported/phase-under.png-547fa3792ebb6a01789bf32bbd51da00.ctex"]
 
 [params]
 
