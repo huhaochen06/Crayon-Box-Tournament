@@ -13,8 +13,6 @@ script = ExtResource("1_uhfqx")
 position = Vector2(13, 10)
 shape = SubResource("RectangleShape2D_ono7p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
 [node name="Box-head" type="Sprite2D" parent="."]
 position = Vector2(13, 10)
 scale = Vector2(0.0882813, 0.0882813)
