@@ -38,5 +38,28 @@ shape = SubResource("RectangleShape2D_icy7b")
 position = Vector2(-498, 458)
 shape = SubResource("RectangleShape2D_6sg0m")
 
-[node name="AnimatableBody2D" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(-330, 373)
+[node name="square" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(-330, -91)
+
+[node name="square2" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(214, 533)
+metadata/_edit_group_ = true
+
+[node name="square3" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(254, 5)
+
+[node name="square4" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(278, 349)
+
+[node name="square5" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(6, 421)
+
+[node name="square6" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(-2, 181)
+
+[node name="square7" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(-370, 397)
+
+[node name="square8" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(-250, 269)
+metadata/_edit_group_ = true
