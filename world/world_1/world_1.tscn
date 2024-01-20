@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://otb2e0vovr7n"]
 
-[ext_resource type="Script" path="res://world/world_1.gd" id="1_7kx4b"]
+[ext_resource type="Script" path="res://world/world_1/world_1.gd" id="1_7kx4b"]
 
 [node name="World1" type="Node2D"]
 position = Vector2(522, 203)
