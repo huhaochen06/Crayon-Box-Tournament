@@ -9,21 +9,24 @@ region = Rect2(172, 172, 135, 132)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1qjw"]
 size = Vector2(36, 35)
 
-[node name="SquareBoxFollow" type="PathFollow2D"]
+[node name="Node2D" type="Node2D"]
+
+[node name="SquareBox" type="PathFollow2D" parent="."]
 scale = Vector2(2, 2)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="SquareBox"]
 remote_path = NodePath("..")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-collision_layer = 3
-collision_mask = 0
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="SquareBox"]
+disable_mode = 2
+collision_layer = 255
+collision_mask = 15
 
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="SquareBox/AnimatableBody2D"]
 position = Vector2(1.44321, 0.500031)
 scale = Vector2(0.295455, 0.295455)
 texture = SubResource("AtlasTexture_omoob")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SquareBox/AnimatableBody2D"]
 position = Vector2(1.44321, 1.00003)
 shape = SubResource("RectangleShape2D_a1qjw")

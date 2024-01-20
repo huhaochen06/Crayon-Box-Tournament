@@ -1,20 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://otb2e0vovr7n"]
+[gd_scene load_steps=6 format=3 uid="uid://otb2e0vovr7n"]
 
-[ext_resource type="PackedScene" uid="uid://g4tvy37k2a3s" path="res://world/world_1/square_box.tscn" id="2_m33wv"]
-
-[sub_resource type="GDScript" id="GDScript_4l3yx"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[ext_resource type="PackedScene" uid="uid://bgt0x5dhoarq3" path="res://world/world_1/sq_box.tscn" id="1_hgubd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mr8x"]
 size = Vector2(742.214, 39)
@@ -28,53 +14,8 @@ size = Vector2(756.427, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sg0m"]
 size = Vector2(173.5, 27)
 
-[sub_resource type="Curve2D" id="Curve2D_yomi3"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 280, 544, 0, 0, 0, 0, 800, 536, 0, 0, 0, 0, 808, 32, 0, 0, 0, 0, 280, 32, 0, 0, 0, 0, 280, 72, 0, 0, 0, 0, 272.471, 290.368, 0, 0, 0, 0, 280, 544)
-}
-point_count = 7
-
-[sub_resource type="Animation" id="Animation_4f1gb"]
-resource_name = "rotate"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SquareBox:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_yfswf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SquareBox:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bldt7"]
-_data = {
-"RESET": SubResource("Animation_yfswf"),
-"rotate": SubResource("Animation_4f1gb")
-}
-
 [node name="World1" type="Node2D"]
 position = Vector2(522, 203)
-script = SubResource("GDScript_4l3yx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(43, -47)
@@ -97,17 +38,5 @@ shape = SubResource("RectangleShape2D_icy7b")
 position = Vector2(-498, 458)
 shape = SubResource("RectangleShape2D_6sg0m")
 
-[node name="Path2D" type="Path2D" parent="."]
-top_level = true
-curve = SubResource("Curve2D_yomi3")
-
-[node name="SquareBox" parent="Path2D" instance=ExtResource("2_m33wv")]
-position = Vector2(280, 544)
-rotation = -0.0153834
-rotates = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D"]
-libraries = {
-"": SubResource("AnimationLibrary_bldt7")
-}
-autoplay = "rotate"
+[node name="AnimatableBody2D" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(-330, 373)
