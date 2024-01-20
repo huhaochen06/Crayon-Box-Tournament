@@ -1,9 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://defdxwfktl665"]
+[gd_scene load_steps=11 format=3 uid="uid://defdxwfktl665"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_ae6yj"]
 [ext_resource type="PackedScene" uid="uid://bwu8ink5eygl7" path="res://player/box/box.tscn" id="1_kqfj3"]
 [ext_resource type="PackedScene" uid="uid://df8j7n3grw5tn" path="res://player/crayon/crayon.tscn" id="2_i8rew"]
 [ext_resource type="Script" path="res://world/main-camera.gd" id="4_85n0t"]
+[ext_resource type="Script" path="res://world/Player1.gd" id="5_kshif"]
+[ext_resource type="Texture2D" uid="uid://c1lj286fb0dcd" path="res://world/player-score.png" id="5_xpwue"]
+[ext_resource type="Script" path="res://world/Player2.gd" id="7_qfcdq"]
+[ext_resource type="Script" path="res://world/Stopwatch.gd" id="8_1b547"]
+
+[sub_resource type="GDScript" id="GDScript_m5mh8"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	self.text = Game.current_player
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_s3ub1"]
+font_size = 32
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ae6yj")
@@ -15,3 +36,88 @@ script = ExtResource("1_ae6yj")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 318)
 script = ExtResource("4_85n0t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CurrentPlayer" type="Label" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 53.0
+offset_right = 68.0
+offset_bottom = 76.0
+script = SubResource("GDScript_m5mh8")
+
+[node name="Wins" type="Node2D" parent="CanvasLayer"]
+
+[node name="Player1" type="Node2D" parent="CanvasLayer/Wins"]
+script = ExtResource("5_kshif")
+metadata/_edit_group_ = true
+
+[node name="ID1" type="TextureRect" parent="CanvasLayer/Wins/Player1"]
+modulate = Color(0.694118, 0, 0.247059, 0.196078)
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 44.0
+offset_bottom = 36.0
+texture = ExtResource("5_xpwue")
+expand_mode = 1
+
+[node name="ID2" type="TextureRect" parent="CanvasLayer/Wins/Player1"]
+modulate = Color(0.694118, 0, 0.247059, 0.196078)
+offset_left = 53.0
+offset_top = 18.0
+offset_right = 71.0
+offset_bottom = 36.0
+texture = ExtResource("5_xpwue")
+expand_mode = 1
+
+[node name="ID3" type="TextureRect" parent="CanvasLayer/Wins/Player1"]
+modulate = Color(0.694118, 0, 0.247059, 0.196078)
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 98.0
+offset_bottom = 36.0
+texture = ExtResource("5_xpwue")
+expand_mode = 1
+
+[node name="Player2" type="Node2D" parent="CanvasLayer/Wins"]
+position = Vector2(1026, 3)
+script = ExtResource("7_qfcdq")
+metadata/_edit_group_ = true
+
+[node name="ID1" type="TextureRect" parent="CanvasLayer/Wins/Player2"]
+modulate = Color(1, 1, 1, 0.196078)
+self_modulate = Color(0, 0.666667, 0.972549, 1)
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 44.0
+offset_bottom = 36.0
+texture = ExtResource("5_xpwue")
+expand_mode = 1
+
+[node name="ID2" type="TextureRect" parent="CanvasLayer/Wins/Player2"]
+modulate = Color(1, 1, 1, 0.196078)
+self_modulate = Color(0, 0.666667, 0.972549, 1)
+offset_left = 53.0
+offset_top = 18.0
+offset_right = 71.0
+offset_bottom = 36.0
+texture = ExtResource("5_xpwue")
+expand_mode = 1
+
+[node name="ID3" type="TextureRect" parent="CanvasLayer/Wins/Player2"]
+modulate = Color(1, 1, 1, 0.196078)
+self_modulate = Color(0, 0.666667, 0.972549, 1)
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 98.0
+offset_bottom = 36.0
+texture = ExtResource("5_xpwue")
+expand_mode = 1
+
+[node name="Stopwatch" type="Label" parent="CanvasLayer"]
+offset_left = 524.0
+offset_top = 24.0
+offset_right = 612.0
+offset_bottom = 47.0
+label_settings = SubResource("LabelSettings_s3ub1")
+script = ExtResource("8_1b547")
