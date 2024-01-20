@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://otb2e0vovr7n"]
+
+[ext_resource type="Script" path="res://world/world_1.gd" id="1_7kx4b"]
+
+[node name="World1" type="Node2D"]
+position = Vector2(522, 203)
+script = ExtResource("1_7kx4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -282.0
+offset_top = 95.0
+offset_right = 331.0
+offset_bottom = 213.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
