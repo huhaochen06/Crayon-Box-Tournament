@@ -1,6 +1,6 @@
 extends Node2D
 
-var allLevels = ["res://world/world_1/world_1.tscn"]
+var allLevels = ["res://world/world_1/world_1.tscn", "res://world/world_2/world_2.tscn"]
 
 @onready var stopwatch = $CanvasLayer/Stopwatch
 
@@ -24,7 +24,7 @@ func _ready():
 	goal.connect("body_entered", on_goal_entered)
 
 func _process(delta):
-	if Input.is_action_just_pressed("start_stopwatch") and !stopwatch.counting:
+	if Input.is_action_pressed("start_stopwatch") and !stopwatch.counting:
 		stopwatch.start()
 
 func on_goal_entered(body):

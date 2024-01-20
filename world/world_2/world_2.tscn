@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bh7asrlab0q0"]
+[gd_scene load_steps=21 format=3 uid="uid://bh7asrlab0q0"]
 
 [ext_resource type="Texture2D" uid="uid://dtn6soenon04c" path="res://world/world_2/art/1024x768-light-sky-blue-solid-color-background.jpg" id="1_dnu51"]
 [ext_resource type="Texture2D" uid="uid://dajawf371tgp2" path="res://world/world_2/art/Sand floor.png" id="2_q72tf"]
@@ -9,10 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://c48lp04qajrif" path="res://world/world_2/art/Clouds4.png" id="5_mmae8"]
 [ext_resource type="Texture2D" uid="uid://h6pi5nhb2wvd" path="res://world/world_2/art/Amazon Boxes 4.png" id="6_eir6k"]
 [ext_resource type="Texture2D" uid="uid://bpuci0aorcf71" path="res://world/world_2/art/Amazon Boxes 1.png" id="6_vuy78"]
-[ext_resource type="Texture2D" uid="uid://bp0txfltmkfjf" path="res://world/world_2/art/Flagpole.png" id="7_gofpj"]
 [ext_resource type="Texture2D" uid="uid://bo8l548rhdldl" path="res://world/world_2/art/Clouds3.png" id="9_kfx34"]
 [ext_resource type="Texture2D" uid="uid://blc86mjf63jrp" path="res://world/world_2/art/Clouds6.png" id="12_wyk6s"]
 [ext_resource type="Texture2D" uid="uid://s2fn48b7q6xc" path="res://world/world_2/art/Clouds5.png" id="13_4ru01"]
+[ext_resource type="PackedScene" uid="uid://r1ufaykleqt1" path="res://world/common/spawn.tscn" id="13_oy7cx"]
+[ext_resource type="PackedScene" uid="uid://cf4to3rh5ysoh" path="res://world/common/goal.tscn" id="14_ftker"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtkvx"]
 size = Vector2(1384, 163)
@@ -94,11 +95,8 @@ shape = SubResource("RectangleShape2D_usb2l")
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(940, 575, 954, 513, 956, 492, 942, 485, 931, 480, 926, 468, 924, 456, 921, 453, 919, 446, 919, 440, 936, 426, 1000, 426, 1000, 386, 1023, 386, 1023, 380, 1029, 380, 1029, 302, 1095, 302, 1095, 338, 1038, 338, 1038, 380, 1044, 380, 1044, 386, 1059, 386, 1059, 432, 1021, 432, 1025, 443, 1023, 457, 1019, 472, 1015, 478, 1013, 491, 1007, 498, 998, 498, 982, 508, 984, 542, 993, 575)
+polygon = PackedVector2Array(940, 575, 954, 513, 956, 492, 942, 485, 931, 480, 926, 468, 924, 456, 921, 453, 919, 446, 919, 440, 936, 426, 1000, 426, 1000, 386, 1023, 386, 1044, 386, 1059, 386, 1059, 432, 1021, 432, 1025, 443, 1023, 457, 1019, 472, 1015, 478, 1013, 491, 1007, 498, 998, 498, 982, 508, 984, 542, 993, 575)
 metadata/_edit_lock_ = true
-
-[node name="Spawn" type="Marker2D" parent="."]
-position = Vector2(120, 528)
 
 [node name="Interactable" type="Node2D" parent="."]
 
@@ -163,13 +161,6 @@ texture_filter = 5
 position = Vector2(728, 514)
 scale = Vector2(0.366667, 0.366667)
 texture = ExtResource("6_eir6k")
-metadata/_edit_lock_ = true
-
-[node name="Flagpole" type="Sprite2D" parent="Interactable"]
-texture_filter = 5
-position = Vector2(1056, 344)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_gofpj")
 metadata/_edit_lock_ = true
 
 [node name="PalmTree3" type="Sprite2D" parent="Interactable"]
@@ -251,3 +242,9 @@ position = Vector2(130.75, 478.5)
 scale = Vector2(0.232813, 0.25)
 texture = ExtResource("3_gxccb")
 metadata/_edit_lock_ = true
+
+[node name="Spawn" parent="." instance=ExtResource("13_oy7cx")]
+position = Vector2(38, 457)
+
+[node name="Goal" parent="." instance=ExtResource("14_ftker")]
+position = Vector2(1018, 372)
