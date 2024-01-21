@@ -15,7 +15,7 @@ script = ExtResource("1_rgdhd")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(0.243137, 0.243137, 0.243137, 0.72549)
+modulate = Color(0.243137, 0.243137, 0.243137, 0.337255)
 offset_right = 1168.0
 offset_bottom = 657.0
 texture = ExtResource("2_wgsqg")

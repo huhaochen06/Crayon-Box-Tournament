@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkee7285goqjw"]
+[gd_scene load_steps=4 format=3 uid="uid://dkee7285goqjw"]
 
 [ext_resource type="Script" path="res://power/PowerScreen.gd" id="1_5i7km"]
+[ext_resource type="FontFile" uid="uid://c67amo7dbl1io" path="res://power/assets/Minecraft.ttf" id="2_03axs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_607ts"]
+font = ExtResource("2_03axs")
+font_size = 64
 
 [node name="PowerUps" type="Node2D"]
 script = ExtResource("1_5i7km")
@@ -10,3 +15,11 @@ position = Vector2(757, 300)
 
 [node name="Card2Pos" type="Marker2D" parent="."]
 position = Vector2(355, 300)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 73.0
+offset_right = 1064.0
+offset_bottom = 266.0
+label_settings = SubResource("LabelSettings_607ts")
+horizontal_alignment = 1
