@@ -23,8 +23,8 @@ size = Vector2(1480, 197)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Light grey background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-352, -185)
-scale = Vector2(10.8382, 6.34804)
+position = Vector2(-803, -739)
+scale = Vector2(13.951, 9.06373)
 texture = ExtResource("1_081uf")
 centered = false
 
