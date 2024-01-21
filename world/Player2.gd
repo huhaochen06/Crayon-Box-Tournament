@@ -8,5 +8,7 @@ func _ready():
 func _process(delta):
 	var score = Game.score.p2
 	for i in range(1, score + 1):
+		if i > 4:
+			break
 		var indicator = get_node("ID"+ str(i))
 		indicator.modulate.a = 1
