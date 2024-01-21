@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbwddh73tb077"]
+
+[ext_resource type="FontFile" uid="uid://c67amo7dbl1io" path="res://power/assets/Minecraft.ttf" id="1_liqhp"]
+[ext_resource type="Script" path="res://world/countdown.gd" id="1_rgdhd"]
+[ext_resource type="Texture2D" uid="uid://h4sgxe7xfm50" path="res://world/world_3/art/474c55.png" id="2_wgsqg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xl16h"]
+font = ExtResource("1_liqhp")
+font_size = 96
+
+[node name="Countdown" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_rgdhd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.243137, 0.243137, 0.243137, 0.72549)
+offset_right = 1168.0
+offset_bottom = 657.0
+texture = ExtResource("2_wgsqg")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 482.0
+offset_top = 295.0
+offset_right = 671.0
+offset_bottom = 391.0
+size_flags_horizontal = 6
+text = "3"
+label_settings = SubResource("LabelSettings_xl16h")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Label"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="CanvasLayer/Label/Timer" to="." method="_on_timer_timeout"]
