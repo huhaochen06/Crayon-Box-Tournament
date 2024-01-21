@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerModifiers" load_steps=4 format=3 uid="uid://3v6jqqqptbu0"]
+[gd_resource type="Resource" script_class="PlayerModifiers" load_steps=4 format=3 uid="uid://dnx2hllqd723e"]
 
 [ext_resource type="Texture2D" uid="uid://drwgsnmxyku42" path="res://power/assets/Cocktail + Tank.png" id="1_kneg7"]
 [ext_resource type="Script" path="res://power/cards/base.gd" id="1_ornl1"]
