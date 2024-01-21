@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerModifiers" load_steps=4 format=3 uid="uid://3v6jqqqptbu0"]
+
+[ext_resource type="Texture2D" uid="uid://drwgsnmxyku42" path="res://power/assets/Cocktail + Tank.png" id="1_kneg7"]
+[ext_resource type="Script" path="res://power/cards/base.gd" id="1_ornl1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcyhj"]
+atlas = ExtResource("1_kneg7")
+region = Rect2(10, 10, 140, 220)
+
+[resource]
+script = ExtResource("1_ornl1")
+movement_speed = 100.0
+size = Vector2(1, 1)
+phase_duration = 2.08165e-12
+phase_cooldown = 2.08165e-12
+dash_speed = 50.0
+dash_duration = 0.0
+card_texture = SubResource("AtlasTexture_fcyhj")
+card_name = "Cocktail"
