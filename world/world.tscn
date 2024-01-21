@@ -54,6 +54,7 @@ offset_right = 47.0
 offset_bottom = 22.0
 label_settings = SubResource("LabelSettings_opf8i")
 script = SubResource("GDScript_m5mh8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Wins" type="Node2D" parent="CanvasLayer"]
 
@@ -130,3 +131,9 @@ offset_right = 625.0
 offset_bottom = 67.0
 label_settings = SubResource("LabelSettings_s3ub1")
 script = ExtResource("8_1b547")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 3.0
+one_shot = true
