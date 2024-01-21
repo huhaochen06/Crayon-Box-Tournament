@@ -53,33 +53,29 @@ func on_goal_entered(body):
     if body.name != "Box":
         return
 
-	stopwatch.stop()
-	Game.times[Game.current_player] = stopwatch.time
-	print(Game.times)
-	if Game.current_player == 'p1':
-		Game.split = 1
-		Game.current_player = 'p2'
-		get_tree().reload_current_scene()
+    stopwatch.stop()
+    Game.times[Game.current_player] = stopwatch.time
+    print(Game.times)
+    if Game.current_player == 'p1':
+        Game.split = 1
+        Game.current_player = 'p2'
+        get_tree().reload_current_scene()
 
-	else:
-		Game.split = 2
-		Game.current_player = 'p1'
-		if Game.times['p1'] < Game.times['p2']:
-			Game.score['p1'] += 1
-			Game.loser = 'p2'
-		else:
-			Game.score['p2'] += 1
-			Game.loser = 'p1'
-		if Game.score['p1'] == 1 or Game.score['p2'] == 1:
-			on_game_over()
-		else:
-			get_tree().change_scene_to_file("res://power/PowerScreen.tscn")
-		
-
-		
+    else:
+        Game.split = 2
+        Game.current_player = 'p1'
+        if Game.times['p1'] < Game.times['p2']:
+            Game.score['p1'] += 1
+            Game.loser = 'p2'
+        else:
+            Game.score['p2'] += 1
+            Game.loser = 'p1'
+        if Game.score['p1'] == 1 or Game.score['p2'] == 1:
+            on_game_over()
+        else:
+            get_tree().change_scene_to_file("res://power/PowerScreen.tscn")
 
 func on_game_over():
-	get_tree().paused = true
-	var end_game_screen = create_instance("res://world/common/endgame.tscn")
-	self.add_child(end_game_screen)
-
+    get_tree().paused = true
+    var end_game_screen = create_instance("res://world/common/endgame.tscn")
+    self.add_child(end_game_screen)

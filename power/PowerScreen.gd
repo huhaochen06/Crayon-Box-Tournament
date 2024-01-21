@@ -10,6 +10,7 @@ var available_powerups = [
 ]
 
 var base_card = "res://power/card.tscn"
+@onready var label = $Label
 
 func get_random_2_powerups():
 	var powerups = []
@@ -21,6 +22,7 @@ func get_random_2_powerups():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	label.text = Game.loser + " lost! Choose a powerup!"
 	var powerups = get_random_2_powerups()
 	for i in range(2):
 		var card = load(base_card).instantiate()
