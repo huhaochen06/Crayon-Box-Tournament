@@ -56,6 +56,11 @@ position = Vector2(580, 656)
 shape = SubResource("RectangleShape2D_qtkvx")
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(592, 16)
+shape = SubResource("RectangleShape2D_qtkvx")
+metadata/_edit_lock_ = true
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-15, 295)
 shape = SubResource("RectangleShape2D_j5rbx")

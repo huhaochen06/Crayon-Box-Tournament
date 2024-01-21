@@ -1,17 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://otb2e0vovr7n"]
+[gd_scene load_steps=9 format=3 uid="uid://otb2e0vovr7n"]
 
 [ext_resource type="PackedScene" path="res://world/world_1/sq_box.tscn" id="1_hgubd"]
 [ext_resource type="PackedScene" uid="uid://r1ufaykleqt1" path="res://world/common/spawn.tscn" id="2_x3mur"]
 [ext_resource type="PackedScene" uid="uid://cf4to3rh5ysoh" path="res://world/common/goal.tscn" id="3_xkw1s"]
+[ext_resource type="PackedScene" uid="uid://bi5x4fxixkgml" path="res://world/world_1/conveyor.tscn" id="4_q72c7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mr8x"]
-size = Vector2(742.214, 39)
+size = Vector2(1325.11, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klr6i"]
 size = Vector2(1455, 61.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icy7b"]
-size = Vector2(756.427, 39)
+size = Vector2(1339.37, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sg0m"]
 size = Vector2(173.5, 27)
@@ -20,10 +21,10 @@ size = Vector2(173.5, 27)
 position = Vector2(522, 203)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(43, -47)
+position = Vector2(102, 37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-559, 150)
+position = Vector2(-558.999, -141.447)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_4mr8x")
 
@@ -32,7 +33,7 @@ position = Vector2(26.5, 535)
 shape = SubResource("RectangleShape2D_klr6i")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(587, 157)
+position = Vector2(588.526, -134.466)
 rotation = 1.57603
 shape = SubResource("RectangleShape2D_icy7b")
 
@@ -41,10 +42,57 @@ position = Vector2(-498, 458)
 shape = SubResource("RectangleShape2D_6sg0m")
 
 [node name="SquareBox" parent="." instance=ExtResource("1_hgubd")]
-position = Vector2(55, 112)
+position = Vector2(-194, -99)
+
+[node name="SquareBox2" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(70, -115)
+rotation = 1.07687
+metadata/_edit_group_ = true
+
+[node name="SquareBox3" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(62, -107)
+rotation = 2.04378
+
+[node name="SquareBox4" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(62, -51)
+rotation = 4.3162
+
+[node name="SquareBox5" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(54, -35)
+rotation = 5.27438
+
+[node name="SquareBox6" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(78, -27)
+rotation = 3.35976
+
+[node name="SquareBox7" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(166, -11)
+
+[node name="SquareBox8" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(166, -67)
+rotation = 1.07687
+metadata/_edit_group_ = true
+
+[node name="SquareBox9" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(158, -59)
+rotation = 2.04378
+
+[node name="SquareBox10" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(38, -19)
+rotation = 4.3162
+
+[node name="SquareBox11" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(-146, 53)
+rotation = 5.27438
+
+[node name="SquareBox12" parent="." instance=ExtResource("1_hgubd")]
+position = Vector2(350, 69)
+rotation = 3.35976
 
 [node name="Spawn" parent="." instance=ExtResource("2_x3mur")]
 position = Vector2(-459, 354)
 
 [node name="Goal" parent="." instance=ExtResource("3_xkw1s")]
 position = Vector2(561, 442)
+
+[node name="Conveyor" parent="." instance=ExtResource("4_q72c7")]
