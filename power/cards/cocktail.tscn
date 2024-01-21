@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3fspvpn1bo6l"]
 
 [ext_resource type="Texture2D" uid="uid://drwgsnmxyku42" path="res://power/assets/Cocktail + Tank.png" id="1_frdsj"]
-[ext_resource type="LabelSettings" uid="uid://bymtqyd1ist14" path="res://power/cards/card_text.tres" id="2_h5s15"]
+[ext_resource type="LabelSettings" path="res://power/cards/card_text.tres" id="2_h5s15"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcyhj"]
 atlas = ExtResource("1_frdsj")

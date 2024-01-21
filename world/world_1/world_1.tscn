@@ -93,6 +93,19 @@ rotation = 3.35976
 position = Vector2(-459, 354)
 
 [node name="Goal" parent="." instance=ExtResource("3_xkw1s")]
-position = Vector2(561, 442)
+position = Vector2(630, -667)
 
 [node name="Conveyor" parent="." instance=ExtResource("4_q72c7")]
+position = Vector2(-306, 389)
+rotation = 6.28319
+
+[node name="Conveyor2" parent="." instance=ExtResource("4_q72c7")]
+position = Vector2(542, 141)
+rotation = 3.11192
+
+[node name="Conveyor3" parent="." instance=ExtResource("4_q72c7")]
+position = Vector2(-314, -203)
+
+[node name="Conveyor4" parent="." instance=ExtResource("4_q72c7")]
+position = Vector2(574, -507)
+rotation = 3.15032

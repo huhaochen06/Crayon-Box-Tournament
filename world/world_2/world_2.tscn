@@ -44,6 +44,11 @@ scale = Vector2(6.43627, 1)
 texture = ExtResource("2_q72tf")
 metadata/_edit_lock_ = true
 
+[node name="SandFloor2" type="Sprite2D" parent="."]
+position = Vector2(656, 962)
+scale = Vector2(12.8934, 3.78431)
+texture = ExtResource("2_q72tf")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -187,11 +192,10 @@ metadata/_edit_lock_ = true
 motion_scale = Vector2(0, 0)
 
 [node name="1024x768-light-sky-blue-solid-color-background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-32, -8)
-scale = Vector2(1.17871, 1)
+position = Vector2(-648, -505)
+scale = Vector2(2.54883, 1.60547)
 texture = ExtResource("1_dnu51")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)

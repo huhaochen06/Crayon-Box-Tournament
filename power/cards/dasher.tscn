@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwg366424qxiw"]
 
 [ext_resource type="Texture2D" uid="uid://614jql83bymk" path="res://power/assets/Sprinter + Dasher.png" id="1_242yu"]
-[ext_resource type="LabelSettings" uid="uid://bymtqyd1ist14" path="res://power/cards/card_text.tres" id="2_24x1x"]
+[ext_resource type="LabelSettings" path="res://power/cards/card_text.tres" id="2_24x1x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dy11d"]
 atlas = ExtResource("1_242yu")

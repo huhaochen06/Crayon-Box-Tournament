@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b75scpew4n4nr"]
 
 [ext_resource type="Texture2D" uid="uid://b0yhq25pe5smd" path="res://power/assets/Quantum Dash + Efficiency.png" id="1_ewud2"]
-[ext_resource type="LabelSettings" uid="uid://bymtqyd1ist14" path="res://power/cards/card_text.tres" id="2_0n2yp"]
+[ext_resource type="LabelSettings" path="res://power/cards/card_text.tres" id="2_0n2yp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyvfh"]
 atlas = ExtResource("1_ewud2")
