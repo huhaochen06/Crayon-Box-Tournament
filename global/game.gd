@@ -2,13 +2,28 @@ extends Node
 
 var color = Color(0, 0, 0)
 
-# Box parameters
-var movement_speed = 400.0
-var size = Vector2(1, 1)
-var phase_duration = 0.5
-var phase_cooldown = 5.0
-var dash_speed = 1000.0
-var dash_duration = 0.2
+var defaults = {
+    "p1": {
+        "color": Color(0, 0, 1),
+        "position": Vector2(0, 0),
+        "size": Vector2(1, 1),
+        "speed": 550,
+        "phase_duration": 0.5,
+        "phase_cooldown": 5.0,
+        "dash_speed": 750.0,
+        "dash_duration": 0.2
+    },
+    "p2": {
+        "color": Color(1, 0, 0),
+        "position": Vector2(0, 0),
+        "size": Vector2(1, 1),
+        "speed": 550,
+        "phase_duration": 0.5,
+        "phase_cooldown": 5.0,
+        "dash_speed": 750.0,
+        "dash_duration": 0.2
+    }
+}
 
 # Game progress
 var score = {
@@ -22,3 +37,10 @@ var times = {
 	"p2": 0
 }
 var current_world = ""
+var loser = ""
+
+# Powerup tracking
+var powerups = {
+    "p1": [],
+    "p2": []
+}

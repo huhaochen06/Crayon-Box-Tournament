@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://defdxwfktl665"]
+[gd_scene load_steps=13 format=3 uid="uid://defdxwfktl665"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_ae6yj"]
 [ext_resource type="PackedScene" uid="uid://bwu8ink5eygl7" path="res://player/box/box.tscn" id="1_kqfj3"]
@@ -7,7 +7,13 @@
 [ext_resource type="Script" path="res://world/Player1.gd" id="5_kshif"]
 [ext_resource type="Texture2D" uid="uid://c1lj286fb0dcd" path="res://world/player-score.png" id="5_xpwue"]
 [ext_resource type="Script" path="res://world/Player2.gd" id="7_qfcdq"]
+[ext_resource type="FontFile" uid="uid://c67amo7dbl1io" path="res://power/assets/Minecraft.ttf" id="8_0yfks"]
 [ext_resource type="Script" path="res://world/Stopwatch.gd" id="8_1b547"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_opf8i"]
+font = ExtResource("8_0yfks")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="GDScript" id="GDScript_m5mh8"]
 script/source = "extends Label
@@ -24,7 +30,9 @@ func _process(delta):
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_s3ub1"]
-font_size = 32
+font = ExtResource("8_0yfks")
+font_size = 42
+font_color = Color(0, 0, 0, 1)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ae6yj")
@@ -40,10 +48,11 @@ script = ExtResource("4_85n0t")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CurrentPlayer" type="Label" parent="CanvasLayer"]
-offset_left = 28.0
-offset_top = 53.0
-offset_right = 68.0
-offset_bottom = 76.0
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 47.0
+offset_bottom = 22.0
+label_settings = SubResource("LabelSettings_opf8i")
 script = SubResource("GDScript_m5mh8")
 
 [node name="Wins" type="Node2D" parent="CanvasLayer"]
@@ -115,9 +124,9 @@ texture = ExtResource("5_xpwue")
 expand_mode = 1
 
 [node name="Stopwatch" type="Label" parent="CanvasLayer"]
-offset_left = 524.0
-offset_top = 24.0
-offset_right = 612.0
-offset_bottom = 47.0
+offset_left = 537.0
+offset_top = 22.0
+offset_right = 625.0
+offset_bottom = 67.0
 label_settings = SubResource("LabelSettings_s3ub1")
 script = ExtResource("8_1b547")
