@@ -18,6 +18,7 @@ position = Vector2(-1, -5)
 texture = SubResource("AtlasTexture_ojy8c")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -27.0
 offset_top = 74.0
 offset_right = 27.0
@@ -26,6 +27,7 @@ text = "Tanker"
 label_settings = ExtResource("2_pj5mt")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = -63.0
 offset_top = 97.0
 offset_right = 62.0

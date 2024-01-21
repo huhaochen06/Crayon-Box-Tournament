@@ -14,6 +14,7 @@ position = Vector2(-2, 2)
 texture = SubResource("AtlasTexture_fcyhj")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -32.0
 offset_top = 77.0
 offset_right = 192.0
@@ -24,6 +25,7 @@ text = "Cocktail
 label_settings = ExtResource("2_h5s15")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = -69.0
 offset_top = 121.0
 offset_right = 70.0

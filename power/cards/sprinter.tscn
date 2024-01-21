@@ -13,6 +13,7 @@ region = Rect2(10, 10, 140, 220)
 texture = SubResource("AtlasTexture_sfry3")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -28.0
 offset_top = 78.0
 offset_right = 36.0
@@ -21,6 +22,7 @@ text = "Sprinter"
 label_settings = ExtResource("2_5e1wq")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = -69.0
 offset_top = 122.0
 offset_right = 70.0
