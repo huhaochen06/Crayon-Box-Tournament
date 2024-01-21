@@ -70,7 +70,7 @@ func on_goal_entered(body):
         else:
             Game.score['p2'] += 1
             Game.loser = 'p1'
-        if Game.score['p1'] == 1 or Game.score['p2'] == 1:
+        if Game.score['p1'] == 3 or Game.score['p2'] == 3:
             on_game_over()
         else:
             get_tree().change_scene_to_file("res://power/PowerScreen.tscn")
