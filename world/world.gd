@@ -45,6 +45,8 @@ func on_goal_entered(body):
 	if Game.current_player == 'p1':
 		Game.split = 1
 		Game.current_player = 'p2'
+		get_tree().reload_current_scene()
+
 	else:
 		Game.split = 2
 		Game.current_player = 'p1'
@@ -54,10 +56,16 @@ func on_goal_entered(body):
 		else:
 			Game.score['p2'] += 1
 			Game.loser = 'p1'
-		get_tree().change_scene_to_file("res://power/PowerScreen.tscn")
-		return
+		if Game.score['p1'] == 1 or Game.score['p2'] == 1:
+			on_game_over()
+		else:
+			get_tree().change_scene_to_file("res://power/PowerScreen.tscn")
+		
 
-	if Game.score['p1'] == 3 or Game.score['p2'] == 3:
-		print("Game over")
-	else:
-		get_tree().reload_current_scene()
+		
+
+func on_game_over():
+	get_tree().paused = true
+	var end_game_screen = create_instance("res://world/common/endgame.tscn")
+	self.add_child(end_game_screen)
+

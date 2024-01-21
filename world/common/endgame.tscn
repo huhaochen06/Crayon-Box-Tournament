@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtfhlufugjwy4"]
+
+[ext_resource type="Script" path="res://world/common/endgame.gd" id="1_qu6jg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_11ekt"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[node name="EndGame" type="CanvasLayer"]
+script = ExtResource("1_qu6jg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 290.0
+offset_top = 207.0
+offset_right = 433.0
+offset_bottom = 295.0
+label_settings = SubResource("LabelSettings_11ekt")
