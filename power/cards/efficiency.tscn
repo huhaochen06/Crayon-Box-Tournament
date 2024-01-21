@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfcu22le0ywrl"]
+
+[ext_resource type="Texture2D" uid="uid://b0yhq25pe5smd" path="res://power/assets/Quantum Dash + Efficiency.png" id="2_sh8hd"]
+[ext_resource type="LabelSettings" path="res://power/cards/card_text.tres" id="3_eqeig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iucf"]
+atlas = ExtResource("2_sh8hd")
+region = Rect2(170, 10, 140, 220)
+
+[node name="Efficiency" type="Button"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+rotation = -3.14159
+texture = SubResource("AtlasTexture_1iucf")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 79.0
+offset_right = 49.0
+offset_bottom = 102.0
+text = "Deficiency"
+label_settings = ExtResource("3_eqeig")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 117.0
+offset_right = 68.0
+offset_bottom = 178.0
+text = "-40% regen rate
+-20% mvt"
+label_settings = ExtResource("3_eqeig")

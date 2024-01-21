@@ -1,13 +1,8 @@
 extends CharacterBody2D
 
-# var NORMAL_SPEED = Game.defaults[Game.current_player].speed
-# const JUMP_VELOCITY = -400.0
-# const WALL_JUMP_VELOCITY = -800 # New constant for wall jump velocity
-# const WALL_SLIDE_SPEED = 6000 # New constant for wall slide speed
-
 var DASH_SPEED = Game.defaults[Game.current_player].dash_speed
 var DASH_DURATION = Game.defaults[Game.current_player].dash_duration
-const DASH_COOLDOWN = 0.5
+var DASH_COOLDOWN = Game.defaults[Game.current_player].dash_cooldown
 
 var PHASE_DURATION = Game.defaults[Game.current_player].phase_duration
 var PHASE_COOLDOWN = Game.defaults[Game.current_player].phase_cooldown
@@ -26,75 +21,6 @@ func _ready():
     # Set size to box_size
     self.scale = box_size
 
-# func _physics_process(delta):
-#     is_touching_wall = is_on_wall() # Check if the character is touching a wall
-
-#     if dash_timer.time_left > 0:
-#         velocity = dash_direction * DASH_SPEED
-#     else:
-#         if is_on_floor():
-#             if dash_cooldown_timer.time_left <= 0:
-#                 $Sprite.texture = load("res://player/box/assets/box-normal.png")
-#                 can_dash = true
-#         else:
-#             if is_touching_wall: # If the character is touching a wall
-#                 if Input.is_action_just_pressed("ui_accept"): # And the jump button is pressed
-#                     # get the normal of the wall and multiply it by the wall jump velocity
-#                     dash_timer.start(DASH_DURATION)
-#                     var player_direction
-#                     if $Sprite.flip_h:
-#                         player_direction = 1
-#                     else:
-#                         player_direction = -1
-#                     dash_direction = Vector2(player_direction, - 1).normalized() / 2
-#                 else:
-                    
-#                     if get_slide_collision(0).get_normal().x > 0: # If the character is touching a wall on the right
-#                         if Input.is_action_pressed("ui_left"): # And the left button is pressed
-#                             velocity.y = WALL_SLIDE_SPEED * delta # Slide down the wall
-#                         else:
-#                             velocity.y += gravity * delta
-#                     else:
-#                         if Input.is_action_pressed("ui_right"): # If the character is touching a wall on the left
-#                             velocity.y = WALL_SLIDE_SPEED * delta # Slide down the wall
-#                         else:
-#                             velocity.y += gravity * delta
-#             else:
-#                 velocity.y += gravity * delta
-
-#         var direction = Input.get_axis("ui_left", "ui_right")
-#         if direction:
-#             $Sprite.flip_h = direction < 0
-#             velocity.x = direction * NORMAL_SPEED
-#         else:
-#             velocity.x = move_toward(velocity.x, 0, NORMAL_SPEED)
-
-#         # Handle jump.
-#         if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-#             velocity.y = JUMP_VELOCITY
-        
-#         # Handle dash.
-#         if Input.is_action_just_pressed("dash"):
-#             if can_dash:
-#                 dash_timer.start(DASH_DURATION)
-#                 dash_cooldown_timer.start(DASH_COOLDOWN)
-#                 $Sprite.texture = load("res://player/box/assets/box-bw.png")
-#                 can_dash = false
-#                 dash_direction = get_direction_from_input()
-
-#         # Handle phase.
-#         if Input.is_action_just_pressed("ability"):
-#             if can_phase:
-#                 phase_timer.start(PHASE_DURATION)
-#                 phase_cooldown_timer.start(PHASE_COOLDOWN)
-#                 # Change opacity of the character
-#                 $Sprite.modulate.a = 0.5
-#                 # change collision layer
-#                 set_collision_mask_value(2, false)
-#                 can_phase = false
-            
-#     move_and_slide()
-
 func _on_dash_timer_timeout():
     velocity = lerp(velocity, Vector2(), 0.5)
 
@@ -106,7 +32,7 @@ func _on_phase_cooldown_timer_timeout():
     can_phase = true
 
 var SPEED = Game.defaults[Game.current_player].speed
-const JUMP_POWER = -800
+const JUMP_POWER = -1500
 
 const ACCELERATION = 50
 const FRICTION = 70
@@ -152,8 +78,6 @@ func input() -> Vector2:
     var input_dir = Vector2.ZERO
 
     input_dir.x = Input.get_axis("ui_left", "ui_right")
-    input_dir.y = Input.get_axis("ui_up", "ui_down")
-    input_dir = input_dir.normalized()
     return input_dir
 
 func phase():
@@ -198,11 +122,12 @@ func jump():
         if is_on_floor():
             velocity.y = JUMP_POWER
     else:
-        velocity.y += gravity
+        if is_on_wall_only():
+            velocity.y += 50
+        else:
+            velocity.y += gravity
 
 func wall_jump():
-    if is_on_wall_only():
-        velocity.y -= 30
     if Input.is_action_just_pressed("ui_accept"):
         if is_on_wall():
             velocity.y = JUMP_POWER
