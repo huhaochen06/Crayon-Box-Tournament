@@ -10,8 +10,9 @@ var defaults = {
         "speed": 550,
         "phase_duration": 0.5,
         "phase_cooldown": 5.0,
-        "dash_speed": 750.0,
-        "dash_duration": 0.2
+        "dash_speed": 1200.0,
+        "dash_duration": 0.1,
+        "dash_cooldown": 0.5
     },
     "p2": {
         "color": Color(1, 0, 0),
@@ -20,8 +21,9 @@ var defaults = {
         "speed": 550,
         "phase_duration": 0.5,
         "phase_cooldown": 5.0,
-        "dash_speed": 750.0,
-        "dash_duration": 0.2
+        "dash_speed": 1200.0,
+        "dash_duration": 0.1,
+        "dash_cooldown": 0.5
     }
 }
 
