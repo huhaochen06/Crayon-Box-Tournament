@@ -1,6 +1,6 @@
 extends Node2D
 
-var allLevels = ["res://world/world_1/world_1.tscn", "res://world/world_2/world_2.tscn"]
+var allLevels = ["res://world/world_1/world_1.tscn", "res://world/world_2/world_2.tscn", "res://world/world_3/world_3.tscn"]
 
 @onready var stopwatch = $CanvasLayer/Stopwatch
 

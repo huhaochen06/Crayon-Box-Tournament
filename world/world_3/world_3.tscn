@@ -1,0 +1,174 @@
+[gd_scene load_steps=12 format=3 uid="uid://dc8brlit4ylg2"]
+
+[ext_resource type="Texture2D" uid="uid://47grd7tdm7al" path="res://world/world_3/art/images.jpg" id="1_081uf"]
+[ext_resource type="Texture2D" uid="uid://h4sgxe7xfm50" path="res://world/world_3/art/474c55.png" id="2_4qcf3"]
+[ext_resource type="Texture2D" uid="uid://ccunapcydh3b3" path="res://world/world_3/art/Orange house.png" id="3_tbb02"]
+[ext_resource type="Texture2D" uid="uid://c2svfvw7f66iy" path="res://world/world_3/art/Train track.png" id="4_4amh3"]
+[ext_resource type="Texture2D" uid="uid://caqamdak53go1" path="res://world/world_3/art/Train track pillar.png" id="5_bba2n"]
+[ext_resource type="Texture2D" uid="uid://bp3tb7euyy0oq" path="res://world/world_3/art/Trash Can.png" id="6_tfh62"]
+[ext_resource type="Texture2D" uid="uid://bdruvxp7p2mxp" path="res://world/world_3/art/Red house.png" id="7_60j1m"]
+[ext_resource type="PackedScene" uid="uid://cf4to3rh5ysoh" path="res://world/common/goal.tscn" id="9_bagex"]
+[ext_resource type="PackedScene" uid="uid://r1ufaykleqt1" path="res://world/common/spawn.tscn" id="9_jepel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpy75"]
+size = Vector2(47, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lp1l"]
+size = Vector2(1480, 197)
+
+[node name="World3" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Light grey background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-352, -185)
+scale = Vector2(10.8382, 6.34804)
+texture = ExtResource("1_081uf")
+centered = false
+
+[node name="474c55" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(688, 1664)
+texture = ExtResource("2_4qcf3")
+
+[node name="Interactable" type="Node2D" parent="."]
+
+[node name="OrangeHouse" type="Sprite2D" parent="Interactable"]
+texture_filter = 1
+position = Vector2(-16, 417)
+scale = Vector2(0.575, 0.575)
+texture = ExtResource("3_tbb02")
+centered = false
+
+[node name="TrainTrack" type="Sprite2D" parent="Interactable"]
+texture_filter = 1
+position = Vector2(290, 427)
+scale = Vector2(0.375, 0.3875)
+texture = ExtResource("4_4amh3")
+
+[node name="TrainTrackPillar" type="Sprite2D" parent="Interactable"]
+texture_filter = 1
+position = Vector2(292, 533)
+scale = Vector2(0.3875, 0.425)
+texture = ExtResource("5_bba2n")
+
+[node name="TrashCan" type="Sprite2D" parent="Interactable"]
+texture_filter = 1
+position = Vector2(400, 558)
+scale = Vector2(0.35, 0.296875)
+texture = ExtResource("6_tfh62")
+
+[node name="RedHouse" type="Sprite2D" parent="Interactable"]
+texture_filter = 1
+position = Vector2(560, 528)
+scale = Vector2(0.4125, 0.4375)
+texture = ExtResource("7_60j1m")
+
+[node name="TrainTrack2" type="Sprite2D" parent="Interactable"]
+position = Vector2(656, 352)
+scale = Vector2(0.5, 0.475)
+texture = ExtResource("4_4amh3")
+
+[node name="TrainTrack3" type="Sprite2D" parent="Interactable"]
+position = Vector2(781.75, 352)
+scale = Vector2(0.467187, 0.475)
+texture = ExtResource("4_4amh3")
+
+[node name="TrainTrackPillar2" type="Sprite2D" parent="Interactable"]
+position = Vector2(728, 504)
+scale = Vector2(0.725, 0.7)
+texture = ExtResource("5_bba2n")
+
+[node name="TrainTrack4" type="Sprite2D" parent="Interactable"]
+position = Vector2(426, 302)
+scale = Vector2(0.5375, 0.4625)
+texture = ExtResource("4_4amh3")
+
+[node name="TrashCan2" type="Sprite2D" parent="Interactable"]
+position = Vector2(968, 528)
+scale = Vector2(0.675, 0.625)
+texture = ExtResource("6_tfh62")
+
+[node name="RedHouse2" type="Sprite2D" parent="Interactable"]
+position = Vector2(467, 288)
+scale = Vector2(0.375, 0.325)
+texture = ExtResource("7_60j1m")
+
+[node name="OrangeHouse2" type="Sprite2D" parent="Interactable"]
+position = Vector2(672, 313)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("3_tbb02")
+
+[node name="TrashCan3" type="Sprite2D" parent="Interactable"]
+position = Vector2(230, 268.75)
+scale = Vector2(0.4875, 0.429687)
+texture = ExtResource("6_tfh62")
+flip_v = true
+
+[node name="TrainTrackPillar3" type="Sprite2D" parent="Interactable"]
+position = Vector2(960, 232)
+rotation = 1.5708
+scale = Vector2(0.747294, 0.816045)
+texture = ExtResource("5_bba2n")
+
+[node name="TrainTrack5" type="Sprite2D" parent="Interactable"]
+position = Vector2(854.75, 118)
+scale = Vector2(0.742187, 0.6625)
+texture = ExtResource("4_4amh3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(54, 429, 91, 428, 122, 440, 133, 455, 127, 583, 18, 583, 13, 454, 24, 441)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(273, 584, 272, 474, 241, 474, 241, 450, 342, 450, 343, 474, 308, 474, 307, 584, 273, 584)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(399.5, 553)
+shape = SubResource("RectangleShape2D_lpy75")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(598, 584, 601, 485, 592, 475, 572, 467, 544, 467, 523, 475, 514, 487, 518, 585)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(691, 586, 692, 408, 592, 408, 592, 380, 621, 381, 615, 263, 624, 252, 651, 240, 686, 240, 712, 249, 723, 264, 719, 380, 846, 382, 847, 410, 757, 410, 757, 584)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(759, 198, 861, 197, 861, 261, 1076, 261, 1075, 195, 960, 195, 960, 158, 759, 158)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(922, 588, 914, 469, 927, 453, 948, 440, 986, 439, 1007, 453, 1021, 468, 1010, 587)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(356, 330, 430, 329, 425, 257, 435, 249, 453, 243, 478, 242, 498, 249, 505, 257, 501, 329, 502, 357, 357, 357)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(217, 328, 190, 311, 196, 226, 265, 226, 269, 310, 245, 329)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(638, 683.5)
+shape = SubResource("RectangleShape2D_5lp1l")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1252, 309)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_5lp1l")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(612, -100)
+shape = SubResource("RectangleShape2D_5lp1l")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-99, 325)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_5lp1l")
+
+[node name="Spawn" parent="." instance=ExtResource("9_jepel")]
+position = Vector2(70, 408)
+
+[node name="Goal" parent="." instance=ExtResource("9_bagex")]
+position = Vector2(967, 427)
